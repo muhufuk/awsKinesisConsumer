@@ -1,2 +1,2 @@
 # awsKinesisConsumer
-Example of Aws Kinesis consumer with Spring Boot
+Example for Aws Kinesis consumer with Spring Boot
