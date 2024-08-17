@@ -52,14 +52,14 @@ public class KinesisRecordProcessor implements IRecordProcessor
                     catch (CharacterCodingException e)
                     {
                         e.printStackTrace();
+                        System.out.println("error")
                     }
                 }
         );
     }
 
     @Override
-    public void shutdown(ShutdownInput shutdownInput)
-    {
+    public void shutdown(ShutdownInput shutdownInput) {
         log.info("Shutting down record processor for shard: " + initializationInput.getShardId());
         // Important to checkpoint after reaching end of shard, so we can start processing data from child shards.
         if (shutdownInput.getShutdownReason() == ShutdownReason.TERMINATE) {
